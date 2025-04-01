@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/css/reg.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="registerForm">
+        <h2>Registration Form</h2>
+        <div>
+            <input type="text" placeholder="Name" id="name">
+            <span id="nameError" class="error"></span>
+
+            <input type="text" placeholder="Username" id="username">
+            <span id="usernameError" class="error"></span>
+
+            <input type="email" placeholder="Email" id="email">
+            <span id="emailError" class="error"></span>
+
+            <input type="number" placeholder="Mobile" id="mobile">
+            <span id="mobileError" class="error"></span>
+
+            <input type="password" placeholder="Password" id="password">
+            <span id="passwordError" class="error"></span>
+
+            <input type="password" placeholder="Confirm Password" id="confirmPassword">
+            <span id="confirmPasswordError" class="error"></span>
+        </div>
+
+        <div class="btn">
+            <button type="submit">Submit</button>
+        </div>
+        <a href="login.html">Go to Login</a>
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let isValid = true;
+
+            let name = document.getElementById('name').value.trim();
+            let username = document.getElementById('username').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let mobile = document.getElementById('mobile').value.trim();
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Name Validation
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                document.getElementById('nameError').innerText = "Name can only contain letters and spaces.";
+                isValid = false;
+            } else {
+                document.getElementById('nameError').innerText = "";
+            }
+
+            // Username Validation
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                document.getElementById('usernameError').innerText = "Username must be alphanumeric.";
+                isValid = false;
+            } else {
+                document.getElementById('usernameError').innerText = "";
+            }
+
+            // Email Validation
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailError').innerText = "Enter a valid email address.";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = "";
+            }
+
+            // Mobile Validation (for Indian numbers)
+            if (!/^(?:\+91)?[6-9]\d{9}$/.test(mobile)) {
+                document.getElementById('mobileError').innerText = "Please enter a valid Indian mobile number (10 digits or with +91).";
+                isValid = false;
+            } else {
+                document.getElementById('mobileError').innerText = "";
+            }
+
+            // **Corrected Password Regex** (Enforces all required conditions)
+            // if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
+            //     document.getElementById('passwordError').innerText = "Password must have at least 6 characters, 1 uppercase, 1 lowercase, 1 number, and 1 special character.";
+            //     isValid = false;
+            // } else {
+            //     document.getElementById('passwordError').innerText = "";
+            // }
+
+            // Confirm Password Validation
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').innerText = "Passwords do not match.";
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').innerText = "";
+            }
+
+            if (isValid) {
+                const user = { name, username, email, mobile, password };
+                localStorage.setItem(username, JSON.stringify(user));
+                alert('Registration Successful!');
+                window.location.href = 'login.html';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

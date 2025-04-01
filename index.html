@@ -40,19 +40,25 @@
                 <a href="#Client" class="header__navlink">Client</a>
             </li>
 
-            <li class="header__navitem">
-                <a href="#blog" class="header__navlink">Blog</a>
-            </li>
+
 
             <li class="header__navitem">
                 <a href="#contact" class="header__navlink">Contect</a>
             </li>
+            <div class="nav_btn">
+                <button>Login</button>
+                <button onclick="window.location.href='reg.html'">Signup</button>
+
+            </div>
+
         </ul>
+
         <div class="header__hamburger">
             <span class="header__bar"></span>
             <span class="header__bar"></span>
             <span class="header__bar"></span>
         </div>
+
     </nav>
     <div class="about_sec">
         <div class="about_back">
@@ -160,7 +166,7 @@
 
     <!-- portfolio  -->
 
-    <section id="Portfolio" id="work">
+    <section  id="Work">
         <ul class="filter-menu">
             <li class="listitemBox active" data-filter="all">All</li>
             <li class="listitemBox" data-filter="Photoshop">Web Designing</li>
@@ -259,31 +265,36 @@
 
     <!-- testi monial  -->
     <h2><strong>Testimonials.</strong></h2>
-    <div class="testimonial-container" id="Client">
-        <div class="testimonial active">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" class="profile-pic">
-            <p class="testimonial-text">Lorem ipsum has been the industry's standard dummy text ever since.</p>
-            <p class="author">Alex Smith</p>
-            <p>Envato Customer</p>
-        </div>
-        <div class="testimonial">
-            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User" class="profile-pic">
-            <p class="testimonial-text">Amazing experience! Highly recommend this service.</p>
-            <p class="author">Jessica Doe</p>
-            <p>Envato Customer</p>
-        </div>
-        <div class="testimonial">
-            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User" class="profile-pic">
-            <p class="testimonial-text">The best service I have used. Five stars!</p>
-            <p class="author">John Doe</p>
-            <p>Envato Customer</p>
-        </div>
-        <div class="dots">
-            <span class="dot active" onclick="changeTestimonial(0)"></span>
-            <span class="dot" onclick="changeTestimonial(1)"></span>
-            <span class="dot" onclick="changeTestimonial(2)"></span>
-        </div>
+<div class="testimonial-container" id="Client">
+    <div class="testimonial active">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" class="profile-pic">
+        <p class="testimonial-text">Lorem ipsum has been the industry's standard dummy text ever since.</p>
+        <p class="author">Alex Smith</p>
+        <p>Envato Customer</p>
     </div>
+    <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User" class="profile-pic">
+        <p class="testimonial-text">Amazing experience! Highly recommend this service.</p>
+        <p class="author">Jessica Doe</p>
+        <p>Envato Customer</p>
+    </div>
+    <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User" class="profile-pic">
+        <p class="testimonial-text">The best service I have used. Five stars!</p>
+        <p class="author">John Doe</p>
+        <p>Envato Customer</p>
+    </div>
+
+    <!-- Dots for Navigation -->
+    <div class="dots">
+        <span class="dot active" onclick="changeTestimonial(0)"></span>
+        <span class="dot" onclick="changeTestimonial(1)"></span>
+        <span class="dot" onclick="changeTestimonial(2)"></span>
+    </div>
+
+    <!-- Buttons for Navigation -->
+</div>
+
     <!-- counter number -->
     <div class="stats-container">
         <div class="stat-item">
@@ -310,40 +321,73 @@
     <!-- blog section  -->
     <!-- <h2>Our Blog</h2> -->
 
-     <div class="slider-container">
+    <div class="bomdy1">
         <h1>Our Blog.</h1>
-        <div class="slider">
-            <div class="slide">
-                <div class="slide-content">
-                    <img src="https://i.ibb.co/684784q/washing-machine.png" alt="Design Item">
-                    <h3>Best Design Items to Appeal to the Millennial Generation</h3>
-                    <p>Trends</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="slide-content">
-                    <img src="https://i.ibb.co/hZ2p47C/stack-of-papers.png" alt="WordPress Theme">
-                    <h3>Top WordPress Themes and Plugins for Hotels, Travel, and</h3>
-                    <p>WordPress</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="slide-content">
-                    <img src="https://i.ibb.co/j4458h6/wooden-speaker.png" alt="Skills">
-                    <h3>Master These Awesome New Skills in March 2018</h3>
-                    <p>Trends</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
+    
+        <div class=" wrapperClassforBlog">
+            
+                <ul class=" abcdcarousel">
+    
+                    <li class="slidingxyzcards">
+    
+                        <div class="imgxoxo "> 
+                            <img src="https://picsum.photos/id/267/600/500" alt="" class="user-imageBlogCon">
+                        </div>
+    
+                            <h4 class="user-name">Themeforest</h4>
+    
+                            <h3 class="user-prof">Lorem The 20 Best Lightroom Presets You Need to Know About
+                            </h3>
+    
+                            <a href="" class="user-button">Read More</a>
+                    </li>
+    
+                    <li class="slidingxyzcards">
+                        <div class="imgxoxo "> 
+                            <img src="https://picsum.photos/id/267/600/500" alt="" class="user-imageBlogCon">
+                        </div>
+                            <h4 class="user-name">Themeforest</h4>
+                            <h3 class="user-prof">Lorem The 20 Best Lightroom Presets You Need to Know About
+                            </h3>
+                            <a href="" class="user-button">Read More</a>
+                    </li>
+    
+                    <li class="slidingxyzcards">
+                        <div class="imgxoxo "> 
+                            <img src="https://picsum.photos/id/267/600/500" alt="" class="user-imageBlogCon">
+                        </div>
+                            <h4 class="user-name">Themeforest</h4>
+                            <h3 class="user-prof">Lorem The 20 Best Lightroom Presets You Need to Know About
+                            </h3>
+                            <a href="" class="user-button">Read More</a>
+                    </li>
+    
+                    <li class="slidingxyzcards">
+                        <div class="imgxoxo "> 
+                            <img src="/img/eig.jpg" alt="" class="user-imageBlogCon">
+                        </div>
+                            <h4 class="user-name">Themeforest</h4>
+                            <h3 class="user-prof">Lorem The 20 Best Lightroom Presets You Need to Know About
+                            </h3>
+                            <a href="" class="user-button">Read More</a>
+                    </li>
+    
+                    <li class="slidingxyzcards">
+                        <div class="imgxoxo "> 
+                            <img src="/img/" alt="" class="user-imageBlogCon">
+                        </div>
+                            <h4 class="user-name">Themeforest</h4>
+                            <h3 class="user-prof">Lorem The 20 Best Lightroom Presets You Need to Know About
+                            </h3>
+                            <a href="" class="user-button">Read More</a>
+                    </li>
+     
+    
+    
+                </ul>
+             
         </div>
-        <div class="nav-dots">
-            <button class="dot active"></button>
-            <button class="dot"></button>
-            <button class="dot"></button>
-        </div>
-    </div> 
+    </div>
 
     <!-- contact  -->
     <section class="contact-section" id="contact">
@@ -375,13 +419,13 @@
             <button type="submit">Submit</button>
         </form>
     </section>
-<!-- footer -->
-<footer>
-    <p>Copy Right 2018 © By Daniels All Rights Reserved</p>
-</footer>
+    <!-- footer -->
+    <footer>
+        <p>Copy Right 2018 © By Daniels All Rights Reserved</p>
+    </footer>
 
 
-     
+
 
     <script src="/js/index.js"></script>
 </body>

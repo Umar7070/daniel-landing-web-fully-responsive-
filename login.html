@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <form id="loginform">
+        <h2>Login Form</h2>
+        <div>
+            <input type="text" placeholder="Username" required id="username">
+            <input type="password" placeholder="Enter your password..." required id="password">
+        </div>
+        <div class="btn">
+            <button type="submit">Login</button>
+        </div>
+        <a href="Reg.html">Go To Register</a>
+    </form>
+
+    <script>
+        document.getElementById("loginform").addEventListener('submit', function(event) {
+            event.preventDefault(); // Page reload होने से रोकने के लिए
+            
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var user = localStorage.getItem(username);
+
+            if (user) {
+                var parsedUser = JSON.parse(user);
+
+                if (parsedUser.password === password) {
+                    localStorage.setItem('user', JSON.stringify(parsedUser));
+                    alert('Login Successfully!');
+                    window.location.href = "index.html"; // ✅ सही credentials पर ही redirect होगा
+                } else {
+                    alert('Incorrect password');
+                }
+            } else {
+                alert('User not found');
+            }
+        });
+    </script>
+</body>
+</html>
